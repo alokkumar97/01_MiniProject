@@ -1,0 +1,13 @@
+package com.Spring.InReGe.Util;
+
+import javax.servlet.http.HttpServletResponse;
+
+public class ExportExcel {
+
+	public void generateExcel(HttpServletResponse response) {
+		
+		
+		HS
+	}
+	
+}

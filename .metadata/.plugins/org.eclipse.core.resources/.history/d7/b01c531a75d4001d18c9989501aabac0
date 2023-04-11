@@ -1,0 +1,18 @@
+package com.Spring.InReGe.Util;
+
+import javax.servlet.http.HttpServletResponse;
+
+import org.apache.poi.hssf.usermodel.HSSFSheet;
+import org.apache.poi.hssf.usermodel.HSSFWorkbook;
+
+public class ExportExcel {
+
+	public void generateExcel(HttpServletResponse response) {
+		
+		
+		HSSFWorkbook workbook = new HSSFWorkbook();
+		HSSFSheet sheet=workbook.createSheet("");
+		
+	}
+	
+}

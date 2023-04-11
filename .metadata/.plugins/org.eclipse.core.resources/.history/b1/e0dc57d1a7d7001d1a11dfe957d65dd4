@@ -1,0 +1,17 @@
+package com.Insurance.Ak.Entities;
+
+import javax.persistence.Entity;
+import javax.persistence.Table;
+
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Data
+@Entity
+@NoArgsConstructor
+@Table(name="insurance_customer_plan")
+public class CustomersPlan {
+	
+
+}

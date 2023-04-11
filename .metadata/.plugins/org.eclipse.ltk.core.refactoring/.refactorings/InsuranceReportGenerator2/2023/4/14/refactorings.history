@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Extract method &apos;private void init(Model model)&apos; from &apos;com.Spring.InReGe.Controller.CustController.homePage(...)&apos; to &apos;com.Spring.InReGe.Controller.CustController&apos;&#x0D;&#x0A;- Original project: &apos;InsuranceReportGenerator2&apos;&#x0D;&#x0A;- Method name: &apos;init&apos;&#x0D;&#x0A;- Destination type: &apos;com.Spring.InReGe.Controller.CustController&apos;&#x0D;&#x0A;- Declared visibility: &apos;private&apos;" comments="false" description="Extract method &apos;init&apos;" destination="0" exceptions="false" flags="786434" id="org.eclipse.jdt.ui.extract.method" input="/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;com.Spring.InReGe.Controller{CustController.java" name="init" replace="false" selection="1021 128" stamp="1680964678312" version="1.0" visibility="2"/>
+</session>

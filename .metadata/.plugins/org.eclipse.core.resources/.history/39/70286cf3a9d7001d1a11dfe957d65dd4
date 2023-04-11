@@ -1,0 +1,25 @@
+package com.Insurance.Ak.ServiceImpl;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.Insurance.Ak.Entities.CustomersPlan;
+import com.Insurance.Ak.Repository.ICustomerRepository;
+import com.Insurance.Ak.Service.ICustomerService;
+
+@Service
+public class CustomerServiceImpl implements ICustomerService{
+	
+	@Autowired
+	private ICustomerRepository customerRepository;
+	
+
+	@Override
+	public Integer saveCustomers(CustomersPlan plan) {
+		
+		return customerRepository.save(plan).getCid() ;
+	}
+
+	
+	
+}

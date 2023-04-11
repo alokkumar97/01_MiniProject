@@ -1,0 +1,49 @@
+package com.Spring.InReGe.Controller;
+
+import com.Spring.InReGe.DTO.SearchRequest;
+import com.Spring.InReGe.Entities.CustomersPlan;
+import com.Spring.InReGe.Service.ICustomerService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RestController;
+
+import java.util.List;
+
+@RestController
+public class CustController {
+    @Autowired
+    ICustomerService customerService;
+
+
+    @GetMapping("/home")
+    public String home() {
+    	return "index";
+    }
+    
+    
+    @GetMapping("/all")
+    public ResponseEntity<List<CustomersPlan>> getAllCustomers(){
+        List<CustomersPlan> list = customerService.findCustomers();
+        return ResponseEntity.ok(list);
+    }
+    @GetMapping("/plan")
+    public List<String> getPlanName(){
+        List<String> list = customerService.getPlanName();
+        return list;
+    }
+    @GetMapping("/status")
+    public List<String> getPlanStatus(){
+        List<String> list = customerService.getPlanStatus();
+        return list;
+    }
+    
+    @GetMapping("/by/{name}")
+    public List<CustomersPlan> searchCust(@PathVariable SearchRequest request){
+    List<CustomersPlan> list =	customerService.searchCust(request);
+    return list;
+    } 
+    
+    
+}

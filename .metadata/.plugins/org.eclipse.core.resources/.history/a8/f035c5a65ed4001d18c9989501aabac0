@@ -1,0 +1,17 @@
+package com.Spring.InReGe.Service;
+
+import com.Spring.InReGe.DTO.SearchRequest;
+import com.Spring.InReGe.Entities.CustomersPlan;
+
+import java.util.List;
+
+public interface ICustomerService {
+
+
+   List<CustomersPlan> findCustomers();
+   List<String> getPlanName();
+   public List<String> getPlanStatus();
+   public List<CustomersPlan> searchCust(SearchRequest request);
+   public boolean exportExcel();
+   public boolean exportPdf();
+}

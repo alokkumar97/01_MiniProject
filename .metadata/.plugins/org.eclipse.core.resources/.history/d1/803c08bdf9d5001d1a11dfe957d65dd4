@@ -1,0 +1,11 @@
+package com.Spring.InReGe.Controller;
+
+import org.springframework.ui.Model;
+
+public class HomeParameter {
+	public Model model;
+
+	public HomeParameter(Model model) {
+		this.model = model;
+	}
+}

@@ -1,0 +1,79 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+	pageEncoding="ISO-8859-1"%>
+<%@ taglib uri="http://www.springframework.org/tags" prefix="form"%>
+
+
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Reports</title>
+<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css"
+	rel="stylesheet"
+	integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ"
+	crossorigin="anonymous">
+</head>
+
+
+
+<body class="text-bg-info p-3">
+
+	<div class="container text-center">
+		<form action="">
+			<h1>Reports Application</h1>
+			<br>
+			<div class="row align-items-center">
+				<div class="col">
+					<select class="form-select">
+						<option selected>Plan Name</option>
+						<option value="1">Cash</option>
+						<option value="2">Food</option>
+						<option value="3">Medical</option>
+						<option value="4">Employeement</option>
+					</select>
+				</div>
+				<div class="col">
+					<select class="form-select">
+						<option selected>Plan Status</option>
+						<option value="1">Approved</option>
+						<option value="2">Denied</option>
+						<option value="3">Terminate</option>
+					</select>
+				</div>
+				<div class="col">
+					<div class="form-check">
+						<div class="form-check form-check-inline">
+							<input class="form-check-input" type="radio"
+								name="inlineRadioOptions" id="radio1" value="option1"> <label
+								class="form-check-label" for="inlineRadio1">Male</label>
+						</div>
+						<div class="form-check form-check-inline">
+							<input class="form-check-input" type="radio"
+								name="inlineRadioOptions" id="radio2" value="option2"> <label
+								class="form-check-label" for="inlineRadio2">FeMale</label>
+						</div>
+					</div>
+				</div>
+			</div>
+			<br> <br>
+			<div class="row">
+				<div class="col">
+					Start Date : <input type="date" value="Start Date">
+				</div>
+				<div class="col">
+					Expire Date : <input type="date" value="End Date">
+				</div>
+				<div class="col">
+					<button type="button" class="btn btn-success">Search</button>
+				</div>
+			</div>
+		</form>
+	</div>
+
+	<script
+		src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
+		crossorigin="anonymous"></script>
+</body>
+</html>

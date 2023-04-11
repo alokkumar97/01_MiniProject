@@ -1,0 +1,5 @@
+package com.Insurance.Ak.DTO;
+
+public class SearchRequest {
+
+}

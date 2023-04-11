@@ -1,0 +1,5 @@
+package com.Insurance.Ak.Entities;
+
+public class CustomersPlan {
+
+}

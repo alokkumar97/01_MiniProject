@@ -1,0 +1,11 @@
+package com.Insurance.Ak.Repository;
+
+
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import com.Insurance.Ak.Entities.CustomersPlan;
+
+public interface ICustomerRepository implements JpaRepository<T, ID> {
+
+	
+}

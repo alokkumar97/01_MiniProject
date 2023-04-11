@@ -1,0 +1,29 @@
+package com.Spring.InReGe.Service;
+
+import com.Spring.InReGe.Entities.CustomersPlan;
+import com.Spring.InReGe.Repository.ICustomerRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import java.util.List;
+import java.util.stream.Collectors;
+
+@Service
+public class CustomerServiceImpl implements ICustomerService{
+
+    @Autowired
+    private ICustomerRepository customerRepository;
+
+    @Override
+    public List<CustomersPlan> findCustomers() {
+        return  customerRepository.findAll();
+    }
+    @Override
+    public List<String> getPlanName() {
+        return customerRepository.getPlanname();
+    }
+    @Override
+    public List<String> getPlanStatus() {
+        return customerRepository.getPlanStatus();
+    }
+}

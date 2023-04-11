@@ -1,0 +1,27 @@
+package com.Insurance.Ak.Controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PostMapping;
+
+import com.Insurance.Ak.Entities.CustomersPlan;
+import com.Insurance.Ak.Service.ICustomerService;
+
+@Controller
+public class CustomerController {
+
+	@Autowired
+	private ICustomerService customerService;
+	
+	public String registerPage() {
+		return "register";
+	}
+	
+	
+	@PostMapping("/save")
+	public String saveCustomers(CustomersPlan plan,Model model) {
+		customerService.saveCustomers(null)
+		return "register";
+	}
+}
