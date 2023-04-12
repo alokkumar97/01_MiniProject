@@ -51,13 +51,6 @@ public class CustController {
 		response.setContentType("application/octet-stream");
 		response.setHeader("Content-Disposition", "attachment;filename=cust_plan.xls");
 		customerService.exportExcel(response);		
-	}  
-	
-	@GetMapping("/pdf")
-	public void exportPDF(HttpServletResponse response) throws Exception {
-		response.setContentType("application/pdf");
-		response.setHeader("Content-Disposition", "attachment;filename=cust_plan.pdf");
-		customerService.exportPdf(response);		
-	}  
+	}    
     
 }

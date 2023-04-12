@@ -1,6 +1,7 @@
 package com.Spring.InReGe.Service;
 
-import java.awt.Color;
+import java.io.File;
+import java.nio.file.Files;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.List;
@@ -20,13 +21,10 @@ import com.Spring.InReGe.DTO.SearchRequest;
 import com.Spring.InReGe.Entities.CustomersPlan;
 import com.Spring.InReGe.Repository.ICustomerRepository;
 import com.lowagie.text.Document;
-import com.lowagie.text.Font;
-import com.lowagie.text.FontFactory;
 import com.lowagie.text.PageSize;
 import com.lowagie.text.Paragraph;
-import com.lowagie.text.Phrase;
-import com.lowagie.text.pdf.PdfPCell;
 import com.lowagie.text.pdf.PdfPTable;
+import com.lowagie.text.pdf.PdfTable;
 import com.lowagie.text.pdf.PdfWriter;
 
 @Service
@@ -82,7 +80,6 @@ public class CustomerServiceImpl implements ICustomerService{
 		
 		Workbook workbook = new HSSFWorkbook();
 		Sheet sheet=workbook.createSheet("Customer Plan");
-		
 		Row headerRow =sheet.createRow(0);
 		headerRow.createCell(0).setCellValue("Sl.No");
 		headerRow.createCell(1).setCellValue("Customer Name");
@@ -133,46 +130,25 @@ public class CustomerServiceImpl implements ICustomerService{
 		p.setAlignment(Paragraph.ALIGN_CENTER);
 		doc.add(p);
 		
-		Font font = FontFactory.getFont(FontFactory.HELVETICA_BOLD);
-		font.setColor(Color.BLUE);
-		
-		PdfPTable table = new PdfPTable(7);
-		table.setSpacingBefore(10);
-		
-		PdfPCell cell = new PdfPCell();
-		cell.setPhrase(new Phrase("Sl.No",font));
-		table.addCell(cell);
-		
-		cell.setPhrase(new Phrase("Customer name",font));
-		table.addCell(cell);
-		
-		cell.setPhrase(new Phrase("Gender",font));
-		table.addCell(cell);
-		
-		cell.setPhrase(new Phrase("Plan Name",font));
-		table.addCell(cell);
-		
-		cell.setPhrase(new Phrase("Plan Status",font));
-		table.addCell(cell);
-		
-		cell.setPhrase(new Phrase("Start Date",font));
-		table.addCell(cell);
-		
-		cell.setPhrase(new Phrase("End Date",font));
-		table.addCell(cell);
+		PdfPTable table = new PdfPTable(5);
+		table.addCell("Sl.No");
+		table.addCell("Customer name");
+		table.addCell("Gender");
+		table.addCell("Plan Name");
+		table.addCell("Plan Status");
+		table.addCell("Start Date");
+		table.addCell("End Date");
 		
 		List<CustomersPlan> plan =customerRepository.findAll();
 		for(CustomersPlan data : plan ) {
 			table.addCell(String.valueOf(data.getId()));
 			table.addCell(data.getName());
-			table.addCell(data.getGender());
-			table.addCell(data.getPlanName());
-			table.addCell(data.getStatus());
-			table.addCell(data.getStartDate()+"");
-			table.addCell(data.getEndDate()+"");
-		}		
+		}
+		
 		doc.add(table);
-		doc.close();		
+		doc.close();
+		
+		
 		return true;
 	}
 	
