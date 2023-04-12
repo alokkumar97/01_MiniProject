@@ -1,0 +1,71 @@
+package com.Spring.InReGe.Util;
+
+import java.awt.Color;
+import java.util.List;
+
+import javax.servlet.http.HttpServletResponse;
+
+import com.Spring.InReGe.Entities.CustomersPlan;
+import com.lowagie.text.Document;
+import com.lowagie.text.Font;
+import com.lowagie.text.FontFactory;
+import com.lowagie.text.PageSize;
+import com.lowagie.text.Paragraph;
+import com.lowagie.text.Phrase;
+import com.lowagie.text.pdf.PdfPCell;
+import com.lowagie.text.pdf.PdfPTable;
+import com.lowagie.text.pdf.PdfWriter;
+
+public class ExportPDF {
+
+	
+	public void generatePdf(HttpServletResponse response,List<CustomersPlan> plan) throws Exception {
+		Document doc = new Document(PageSize.A4);
+		PdfWriter.getInstance(doc, response.getOutputStream());
+		doc.open();
+		Paragraph p = new Paragraph("Customers Plans Info");
+		p.setAlignment(Paragraph.ALIGN_CENTER);
+		doc.add(p);
+		
+		Font font = FontFactory.getFont(FontFactory.HELVETICA_BOLD);
+		font.setColor(Color.BLUE);
+		
+		PdfPTable table = new PdfPTable(7);
+		table.setSpacingBefore(10);
+		
+		PdfPCell cell = new PdfPCell();
+		cell.setPhrase(new Phrase("Sl.No",font));
+		table.addCell(cell);
+		
+		cell.setPhrase(new Phrase("Customer name",font));
+		table.addCell(cell);
+		
+		cell.setPhrase(new Phrase("Gender",font));
+		table.addCell(cell);
+		
+		cell.setPhrase(new Phrase("Plan Name",font));
+		table.addCell(cell);
+		
+		cell.setPhrase(new Phrase("Plan Status",font));
+		table.addCell(cell);
+		
+		cell.setPhrase(new Phrase("Start Date",font));
+		table.addCell(cell);
+		
+		cell.setPhrase(new Phrase("End Date",font));
+		table.addCell(cell);
+		
+		 
+		for(CustomersPlan data : plan ) {
+			table.addCell(String.valueOf(data.getId()));
+			table.addCell(data.getName());
+			table.addCell(data.getGender());
+			table.addCell(data.getPlanName());
+			table.addCell(data.getStatus());
+			table.addCell(data.getStartDate()+"");
+			table.addCell(data.getEndDate()+"");
+		}		
+		doc.add(table);
+		doc.close();		
+	}
+}
