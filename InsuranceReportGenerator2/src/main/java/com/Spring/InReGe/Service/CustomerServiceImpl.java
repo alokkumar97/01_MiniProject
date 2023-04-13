@@ -1,5 +1,6 @@
 package com.Spring.InReGe.Service;
 
+import java.io.File;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.List;
@@ -15,6 +16,7 @@ import com.Spring.InReGe.Entities.CustomersPlan;
 import com.Spring.InReGe.Repository.ICustomerRepository;
 import com.Spring.InReGe.Util.ExportExcel;
 import com.Spring.InReGe.Util.ExportPDF;
+import com.Spring.InReGe.Util.MailUtil;
 
 @Service
 public class CustomerServiceImpl implements ICustomerService {
@@ -27,6 +29,9 @@ public class CustomerServiceImpl implements ICustomerService {
 
 	@Autowired
 	private ExportExcel excel;
+	
+	@Autowired
+	private MailUtil mailUtil;
 
 	@Override
 	public List<CustomersPlan> searchCust(SearchRequest request) {
@@ -68,16 +73,32 @@ public class CustomerServiceImpl implements ICustomerService {
 	// Excel Export
 	@Override
 	public boolean exportExcel(HttpServletResponse response) throws Exception {
+		File f = new File("cust_plan.xls");
 		List<CustomersPlan> plan = customerRepository.findAll();
-		excel.generateExcel(response, plan);
+		excel.generateExcel(response, plan,f);
+		
+		String subject="Test Mail";
+		String body="<h3>This Is Tempory Mail !!!</h3>";
+		String to="alokaddicted97@gmail.com";		
+		mailUtil.sendMail(subject, body, to,f);
+		f.delete();		
 		return true;
 	}
 
 	// Pdf Export
 	@Override
 	public boolean exportPdf(HttpServletResponse response) throws Exception {
+		File f = new File("cust_plan.pdf");
 		List<CustomersPlan> plan = customerRepository.findAll();
-		exportPDF.generatePdf(response, plan);
+		exportPDF.generatePdf(response, plan,f);
+
+		String subject="Test Mail";
+		String body="<h3>This Is Tempory Mail !!!</h3>";
+		String to="alokaddicted97@gmail.com";
+		
+		mailUtil.sendMail(subject, body, to,f);
+		
+		f.delete();
 		return true;
 	}
 

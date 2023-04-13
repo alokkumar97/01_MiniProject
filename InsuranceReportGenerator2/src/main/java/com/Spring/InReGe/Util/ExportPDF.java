@@ -1,6 +1,8 @@
 package com.Spring.InReGe.Util;
 
 import java.awt.Color;
+import java.io.File;
+import java.io.FileOutputStream;
 import java.util.List;
 
 import javax.servlet.http.HttpServletResponse;
@@ -22,9 +24,10 @@ import com.lowagie.text.pdf.PdfWriter;
 public class ExportPDF {
 
 	
-	public void generatePdf(HttpServletResponse response,List<CustomersPlan> plan) throws Exception {
+	public void generatePdf(HttpServletResponse response,List<CustomersPlan> plan, File file) throws Exception {
 		Document doc = new Document(PageSize.A4);
 		PdfWriter.getInstance(doc, response.getOutputStream());
+		PdfWriter.getInstance(doc, new FileOutputStream(file));
 		doc.open();
 		Paragraph p = new Paragraph("Customers Plans Info");
 		p.setAlignment(Paragraph.ALIGN_CENTER);

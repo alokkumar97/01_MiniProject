@@ -1,9 +1,0 @@
-package com.Insurance.Ak.Service;
-
-import com.Insurance.Ak.Entities.CustomersPlan;
-
-public class ICustomerService {
-
-	 Integer saveCustomers(CustomersPlan)
-	
-}

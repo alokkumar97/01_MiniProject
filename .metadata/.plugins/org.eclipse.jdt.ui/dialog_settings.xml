@@ -1,5 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
+	<item key="delegateUpdating" value="false"/>
+	<item key="org.eclipse.jdt.ui.codeformatter.create_profile_dialog.open_edit" value="true"/>
+	<item key="org.eclipse.jdt.ui.codeformatter.line_wrapping_tab_page.preview_line_width" value="40"/>
+	<item key="org.eclipse.jdt.uiformatter_page.last_focus_index" value="419"/>
+	<item key="org.eclipse.jdt.uiformatter_pagemodify_dialog.preferred_width" value="1194"/>
+	<item key="org.eclipse.jdt.uiformatter_pagemodify_dialog.preferred_height" value="760"/>
+	<item key="org.eclipse.jdt.uiformatter_pagemodify_dialog.preferred_x" value="75"/>
+	<item key="org.eclipse.jdt.uiformatter_pagemodify_dialog.preferred_y" value="0"/>
+	<item key="org.eclipse.jdt.uiformatter_pagemodify_dialog.sash_form_left_width" value="517"/>
+	<item key="org.eclipse.jdt.uiformatter_pagemodify_dialog.sash_form_rigth_width" value="636"/>
+	<item key="org.eclipse.jdt.uiformatter_page.preference_tree_expansion" value="00.0..0.0.000.0.0.0.0.0.0.0.0.0.0..00.0.0.0.0.0.0.0.0.0.0..00.0.0.0.0.0.0..00.0.0.0..00.0.0.0...00.0.0..000.0..0.0..000.0.0.0.0.0.0.0.0.0.0.0...10.0..0.."/>
+	<item key="org.eclipse.jdt.uiformatter_page.preference_scroll_position" value="0"/>
 	<section name="org.eclipse.jdt.internal.ui.packageview.PackageExplorerPart">
 		<item key="group_libraries" value="true"/>
 		<item key="layout" value="2"/>
@@ -25,5 +37,40 @@
 	</section>
 	<section name="NewPackageWizardPage">
 		<item key="create_package_info_java" value="false"/>
+	</section>
+	<section name="RefactoringWizard.preview">
+		<item key="width" value="600"/>
+		<item key="height" value="400"/>
+	</section>
+	<section name="ExtractMethodWizard">
+		<item key="ThrowRuntimeExceptions" value="false"/>
+		<item key="GenerateJavadoc" value="false"/>
+		<item key="AccessModifier" value="2"/>
+	</section>
+	<section name="org.eclipse.jdt.internal.ui.dialogs.OpenTypeSelectionDialog2">
+		<item key="ShowStatusLine" value="true"/>
+		<item key="History" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&#x0D;&#x0A;&lt;History/&gt;"/>
+		<item key="WorkingSet" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&#x0D;&#x0A;&lt;workingSet workingSetName=&quot;&quot;/&gt;"/>
+		<section name="DialogBoundsSettings">
+			<item key="DIALOG_HEIGHT" value="500"/>
+			<item key="DIALOG_WIDTH" value="600"/>
+			<item key="DIALOG_X_ORIGIN" value="348"/>
+			<item key="DIALOG_Y_ORIGIN" value="55"/>
+			<item key="DIALOG_FONT_NAME" value="1|Segoe UI|9.0|0|WINDOWS|1|-12|0|0|0|400|0|0|0|1|0|0|0|0|Segoe UI"/>
+		</section>
+	</section>
+	<section name="DialogBounds_SuperInterfaceSelectionDialog">
+		<item key="DIALOG_X_ORIGIN" value="85"/>
+		<item key="DIALOG_Y_ORIGIN" value="0"/>
+		<item key="DIALOG_WIDTH" value="373"/>
+		<item key="DIALOG_HEIGHT" value="549"/>
+		<item key="DIALOG_FONT_NAME" value="1|Segoe UI|9.0|0|WINDOWS|1|-12|0|0|0|400|0|0|0|1|0|0|0|0|Segoe UI"/>
+	</section>
+	<section name="org.eclipse.jdt.internal.ui.text.QuickOutline">
+		<item key="GoIntoTopLevelTypeAction.isChecked" value="false"/>
+		<item key="org.eclipse.jdt.internal.ui.text.JavaOutlineInformationControlDIALOG_WIDTH" value="450"/>
+		<item key="org.eclipse.jdt.internal.ui.text.JavaOutlineInformationControlDIALOG_HEIGHT" value="380"/>
+		<item key="org.eclipse.jdt.internal.ui.text.JavaOutlineInformationControlDIALOG_USE_PERSISTED_SIZE" value="true"/>
+		<item key="org.eclipse.jdt.internal.ui.text.JavaOutlineInformationControlDIALOG_USE_PERSISTED_LOCATION" value="false"/>
 	</section>
 </section>

@@ -14,11 +14,12 @@
 	rel="stylesheet"
 	integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ"
 	crossorigin="anonymous">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" rel="stylesheet">
 </head>
 
 
 
-<body class="text-bg-info">
+<body class="text-bg-light">
 
 	<div class="container text-center">
 		<h1 class="pb-3 pt-3">Reports Application</h1>
@@ -51,8 +52,8 @@
 						<td><form:input path="endDate" type="date" /></td>
 					</tr>
 					<tr>
-						<td><a href="/" class="btn btn-danger">Reset</a> <input
-							type="submit" value="Search" class="btn btn-success" />
+						<td><a href="/" class="btn btn-danger">Reset <i class="fa-solid fa-arrow-rotate-left fa-sm"></i></a> 
+						<button type="submit" value="Search" class="btn btn-success">Search <i class="fa-solid fa-magnifying-glass fa-sm"></i></button>
 					</tr>
 				</table>
 			</div>
@@ -92,9 +93,10 @@
 			</tbody>
 
 		</table>
-
+		
 		<hr />
-		<a href="/excel">Excel</a> <a href="/pdf">PDF</a>
+		<a href="/excel" class="btn btn-success">Excel <i class="fa-solid fa-table fa-beat fa-sm" style="color: #c3c7c2;"></i></a> 
+		<a href="/pdf"class="btn btn-secondary">PDF <i class="fa-solid fa-file-pdf fa-beat fa-sm" style="color: #1d1b1b;"></i></a> 
 	</div>
 
 	<script

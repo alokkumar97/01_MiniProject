@@ -1,0 +1,28 @@
+package com.Spring.InReGe.Util;
+
+import javax.mail.internet.MimeMessage;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.mail.javamail.JavaMailSender;
+import org.springframework.mail.javamail.MimeMailMessage;
+import org.springframework.mail.javamail.MimeMessageHelper;
+import org.springframework.stereotype.Component;
+
+@Component
+public class MailUtil {
+
+	@Autowired
+	private JavaMailSender javaMailSender;
+	
+	public void sendMail(String subject, String body, String to) throws Exception {
+		MimeMessage mimeMessage = javaMailSender.createMimeMessage();
+		MimeMessageHelper message = new MimeMessageHelper(mimeMessage);
+		message.setSubject(subject);
+		message.setText(body, true);
+		message.setTo(to);
+		javaMailSender.send(mimeMessage);
+		
+		
+	}
+	
+}

@@ -1,5 +1,0 @@
-package com.Spring.InReGe.DTO;
-
-public class SearchRequest {
-
-}

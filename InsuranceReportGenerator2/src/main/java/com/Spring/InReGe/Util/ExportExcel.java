@@ -1,11 +1,12 @@
 package com.Spring.InReGe.Util;
 
+import java.io.File;
+import java.io.FileOutputStream;
 import java.util.List;
 
 import javax.servlet.ServletOutputStream;
 import javax.servlet.http.HttpServletResponse;
 
-import org.apache.poi.hssf.usermodel.HSSFSheet;
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.ss.usermodel.Sheet;
@@ -17,7 +18,7 @@ import com.Spring.InReGe.Entities.CustomersPlan;
 @Component
 public class ExportExcel {
 
-	public void generateExcel(HttpServletResponse response,List<CustomersPlan> details) throws Exception {
+	public void generateExcel(HttpServletResponse response,List<CustomersPlan> details, File file) throws Exception {
 		
 		Workbook workbook = new HSSFWorkbook();
 		Sheet sheet=workbook.createSheet("Customer Plan");
@@ -54,6 +55,10 @@ public class ExportExcel {
 			
 			dataRowCount ++;
 		}
+		FileOutputStream fos = new FileOutputStream(file);
+		workbook.write(fos);
+		fos.close();
+		
 		ServletOutputStream sos = response.getOutputStream();
 		workbook.write(sos);
 		workbook.close();
